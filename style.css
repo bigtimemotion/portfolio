@@ -1,0 +1,188 @@
+/* =================================================================
+   WEEK 2: CSS layout
+   The colours and fonts are done for you.
+   The LAYOUT is your job: complete TODOs 1–7 in order.
+   Save after each one and watch the page change.
+   ================================================================= */
+
+/* "*" selects EVERY element. border-box makes widths include padding,
+   which makes sizing much easier to predict. Almost every site does this. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #1e293b;
+  background: #f8fafc;
+  line-height: 1.6;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.site-header {
+  background: white;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  /* TODO 1: Put the logo and the nav side by side, with the logo on the
+     far left and the nav on the far right, vertically centred.
+     You need three properties:
+       display: ...;           (turn on flexbox)
+       justify-content: ...;   (spacing along the row)
+       align-items: ...;       (vertical alignment)                     */
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #1e293b;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  /* TODO 2: Put the three links in a row with 24px of space between them.
+     Hint: display: flex;  and  gap: ...;                               */
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  min-height: 60vh;          /* 60% of the screen's height */
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  /* TODO 3: Centre the content (heading, text, button) in the middle of
+     the hero, both horizontally AND vertically, stacked top to bottom.
+     Hint: flexbox again, but this time:
+       flex-direction: column;
+     Then work out which property centres along the column and which
+     centres across it. (Hint: in a column, they swap roles!)           */
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  background: white;
+  color: #2563eb;
+  padding: 10px 24px;
+  border-radius: 999px;      /* very large radius = pill shape */
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+/* ---------------- SKILLS ---------------- */
+
+.skills {
+  list-style: none;          /* removes the bullet points */
+  padding: 0;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  /* TODO 4: Show the skills as a row of "tags" that WRAP onto a new line
+     when they run out of space, with 8px gaps.
+     Hint: display: flex;  flex-wrap: ...;  gap: ...;                   */
+}
+
+.skills li {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* ---------------- PROJECTS ---------------- */
+
+.project-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3,1fr);
+  /* TODO 5: Arrange the 6 project cards in a grid of 3 equal columns
+     with 24px gaps.
+     Hint:
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+     "1fr" means "one share of the free space", so 3 x 1fr = 3 equal columns. */
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* =================================================================
+   RESPONSIVE DESIGN
+   A "media query" applies styles ONLY when a condition is true.
+   Below: only when the screen is 600px wide or narrower (a phone).
+   To test: press F12, then click the phone/tablet icon at the top left
+   of DevTools (or press Ctrl+Shift+M) and drag the width.
+   ================================================================= */
+
+@media (max-width: 600px) {
+
+  /* TODO 6: On phones, 3 columns are far too squashed.
+     Make .project-grid use just 1 column.                              */
+  .project-grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .site-header{
+    flex-direction: column;
+    gap: 8px;
+  }
+  /* TODO 7: On phones, stack the header: logo on top, links underneath.
+     Hint: change .site-header's flex-direction, and add a small gap.   */
+
+}
+
+/* =================================================================
+   CHALLENGE (optional)
+   Replace your TODO 5 columns with:
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   then delete TODO 6. Resize the window and watch what happens.
+   Can you explain why TODO 6 is no longer needed?
+   ================================================================= */

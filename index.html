@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  WEEK 2 — Portfolio page (CSS layout)
+  The HTML is already written. Your job this week is in style.css:
+  turn this plain, stacked page into a real layout using Flexbox and Grid.
+  You may change the TEXT here to your own, but keep the class names.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This line makes the page scale properly on phones. Never remove it. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aubrey | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER: logo on the left, navigation links on the right -->
+  <header class="site-header">
+    <a href="#" class="logo">aubrey.dev</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: the big intro section at the top -->
+    <section class="hero">
+      <h1>Hi, I'm aubrey 👋</h1>
+      <p>Aspiring full stack engineer. I build things for the web.</p>
+      <a href="#projects" class="button">See my work</a>
+    </section>
+
+    <!-- ABOUT + SKILLS -->
+    <section id="about" class="section">
+      <h2>About me</h2>
+      <p>I'm learning web development from scratch, one week at a time.</p>
+
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+        <li>Flexbox</li>
+        <li>Grid</li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS: a grid of cards -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Profile Card</h3>
+          <p>My first web page, with a like counter and dark mode.</p>
+        </article>
+        <article class="project-card">
+          <h3>Portfolio</h3>
+          <p>This page! Built with Flexbox and Grid.</p>
+        </article>
+        <article class="project-card">
+          <h3>Guessing Game</h3>
+          <p>Coming in week 3.</p>
+        </article>
+        <article class="project-card">
+          <h3>To-do List</h3>
+          <p>Coming in week 4.</p>
+        </article>
+        <article class="project-card">
+          <h3>Weather App</h3>
+          <p>Coming in week 7.</p>
+        </article>
+        <article class="project-card">
+          <h3>Capstone</h3>
+          <p>To be decided.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Find me on <a href="https://github.com/">GitHub</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 aubrey</p>
+  </footer>
+
+</body>
+</html>
